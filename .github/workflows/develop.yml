@@ -1,4 +1,4 @@
-name: unit_test
+name: user_microservice
 on:
   pull_request:
     branches:
@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  testing:
+  build:
+    name: unit_test
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
