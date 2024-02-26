@@ -4,6 +4,7 @@ export const Types = {
   USER_SERVICE: Symbol.for('USER_SERVICE'),
   SCHEMA_MIDDLEWARE: Symbol.for('SCHEMA_MIDDLEWARE'),
   JWT: Symbol.for('JWT'),
+  JWT_MIDDLEWARE: Symbol.for("JWT_MIDDLEWARE"),
   AUTH_SERVICE: Symbol.for('AUTH_SERVICE'),
   AUTH_CONTROLLER: Symbol.for('AUTH_CONTROLLER'),
   BCRYPT: Symbol.for('BCRYPT'),

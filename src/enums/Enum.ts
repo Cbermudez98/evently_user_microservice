@@ -16,7 +16,7 @@ export enum HTTP_STATUS {
 export enum HTTP_MESSAGE {
   SUCCESS = 'Success',
   BAD_REQUEST = 'Bad request',
-  NOT_FOUND = "Not found",
+  NOT_FOUND = 'Not found',
   FORBIDDEN = 'Not allowed',
   UN_AUTHORIZED = 'Unauthorized',
   INTERNAL_ERROR = 'Internal server error',

@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import { IManagerRouter } from '../interfaces/IManager.router';
 import { injectable } from 'inversify';
 import { HTTP_MESSAGE, HTTP_STATUS } from '../enums/Enum';
-import Logger from '../utils/Logger';
 
 @injectable()
 export class ManagerRouter implements IManagerRouter {
@@ -13,12 +12,11 @@ export class ManagerRouter implements IManagerRouter {
       })
       .catch((error) => {
         if (error.message.includes('Duplicate entry')) {
-          res.status(HTTP_STATUS.BAD_REQUEST).send({
+          return res.status(HTTP_STATUS.BAD_REQUEST).send({
             data: HTTP_MESSAGE.BAD_REQUEST,
           });
         } else {
-          Logger.error(error);
-          res
+          return res
             .status(error?.status || HTTP_STATUS.INTERNAL_ERROR)
             .send({ data: error?.message || HTTP_MESSAGE.INTERNAL_ERROR });
         }
